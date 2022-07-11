@@ -4,7 +4,8 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Illya\\SlimTest\\": "src/"
+            "Illya\\SlimTest\\": "src/",
+            "App\\": "src/"
         }
     },
     "authors": [

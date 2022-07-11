@@ -2,5 +2,12 @@
 {% block body %}
 <div>
 <h1>INDEX PAGE</h1>
+
+{% for  post in posts %}
+<div>
+    <a href="/post/{{ post.id }}">{{ post.name }}</a>
+</div>
+{% endfor %}
+
 </div>
 {% endblock %}

@@ -1,5 +1,6 @@
 <?php
 
+use App\DB;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpNotFoundException;
@@ -26,18 +27,30 @@ try {
     die();
 }
 
+$Db = new DB($connection);
+
 $app = AppFactory::create();
 
-$app->get('/', function (Request $request, Response $response, $args) use ($view) {
-    $body = $view->render('index.twig');
+$app->get('/', function (Request $request, Response $response, $args) use ($view, $Db) {
+    $posts = $Db->getList();
+
+    $body = $view->render('index.twig', [
+        'posts' => $posts
+    ]);
     $response->getBody()->write($body);
     return $response;
 });
 
-$app->get('/page/{key}', function (Request $request, Response $response, $args) use ($view) {
-    $body = $view->render('page.twig', [
-        'key' => $args['key']
-    ]);
+$app->get('/post/{id}', function (Request $request, Response $response, $args) use ($view, $Db) {
+    $post = $Db->getById((string) $args['id']);
+
+    if (empty($post)) {
+        $body = '404 not found';
+    } else {
+        $body = $view->render('post.twig', [
+            'post' => $post
+        ]);
+    }
     $response->getBody()->write($body);
     return $response;
 });

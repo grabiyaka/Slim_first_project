@@ -1,6 +1,7 @@
 {% extends 'base.twig' %}
 {% block body %}
 <div>
-<h1>PAGE {{ key }}</h1>
+<h1>{{ post.name|escape }}</h1>
+<h2>{{ post.description }}</h2>
 </div>
 {% endblock %}
