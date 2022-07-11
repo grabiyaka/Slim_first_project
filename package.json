@@ -1,0 +1,11 @@
+{
+    "name": "slim",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "php -S localhost:5000"
+    },
+    "author": "",
+    "license": "ISC"
+  }

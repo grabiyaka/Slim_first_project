@@ -1,0 +1,23 @@
+{
+    "name": "illya/slim-test",
+    "description": "first project in Slim",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Illya\\SlimTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "rabiyaka",
+            "email": "illya.gerasimets@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.5",
+        "twig/twig": "^3.4",
+        "ext-pdo": "*"
+    }
+}
