@@ -5,12 +5,12 @@
     "autoload": {
         "psr-4": {
             "Illya\\SlimTest\\": "src/",
-            "App\\": "src/"
+            "App\\": "app/"
         }
     },
     "authors": [
         {
-            "name": "rabiyaka",
+            "name": "grabiyaka",
             "email": "illya.gerasimets@gmail.com"
         }
     ],
